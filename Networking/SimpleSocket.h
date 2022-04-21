@@ -18,11 +18,14 @@ namespace BSO
             // Function to test sockets and connections
             void testConnection(int);
 
-        // Getter functions
+        
         public: 
+            // Getter functions
             const struct sockaddr_in& address() const;
             int sock() const ;
             int connection() const;
+            // Setter functions
+            void setConnection(int connection);
             
         private:
             struct sockaddr_in m_Address;

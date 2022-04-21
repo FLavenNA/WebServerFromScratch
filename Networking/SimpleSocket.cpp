@@ -11,9 +11,7 @@ BSO::SimpleSocket::SimpleSocket(int domain, int service, int protocol, int port,
     // Establish socket
     m_Sock = socket(domain, service, protocol);
     testConnection(m_Sock);
-    // Establish network connection 
-    m_Connection = connectToNetwork(m_Sock, m_Address);
-    testConnection(m_Connection);
+
 }
 
 // Test connection virtual function
@@ -42,4 +40,11 @@ int BSO::SimpleSocket::sock() const
 int BSO::SimpleSocket::connection() const
 {
     return m_Connection;
+}
+
+// Setter functions
+
+void BSO::SimpleSocket::setConnection(int connection)
+{
+    m_Connection = connection;
 }

@@ -10,7 +10,9 @@ namespace BSO
     class BindingSocket: public SimpleSocket
     {
         public:
+            // Constructor
             BindingSocket(int domain, int service, int protocol, int port, u_long yourIpAddress);
+            // Virtual function from parent
             int connectToNetwork(int sock, struct sockaddr_in address); 
     };
 }
