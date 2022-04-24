@@ -7,4 +7,6 @@
 
 #include <stdio.h>
 
+#include "Networking/bsolibc-networking.h"
+
 #endif /* bsolibc_h */  

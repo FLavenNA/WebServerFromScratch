@@ -3,19 +3,20 @@
 
 #include <stdio.h>
 
-#include "SimpleSocket.h"
+#include "BindingSocket.h"
 
 namespace BSO
 {
-    class ListeningSocket: public SimpleSocket
+    class ListeningSocket: public BindingSocket
     {
         public:
             // Constructor
             ListeningSocket(int domain, int service, int protocol, int port, u_long yourIpAddress, int backlog);
-            // Virtual function from parent
-            int connectToNetwork(int sock, struct sockaddr_in address); 
+            void starListening();
+
         private: 
             int m_Backlog;
+            int m_Listening;
     };
 }
 
