@@ -3,7 +3,17 @@
 
 #include <stdio.h>
 #include <iostream>
+
+
+// We include our system headers depending on the OS 
+#if defined(_WIN32) || defined(WIN32) 
 #include <WinSock2.h>
+#elif defined(__linux__) || defined(__unix__) 
+#include <sys/socket.h>
+#include <netinet/in.h>
+#endif
+
+
 
 
 namespace BSO   
@@ -35,9 +45,10 @@ namespace BSO
             struct sockaddr_in m_Address;
             int m_Sock;
             int m_Connection;
+            #if defined(_WIN32) || defined(WIN32) 
             WSADATA m_Wsa;  
+            #endif
             
-
     };
 }
 

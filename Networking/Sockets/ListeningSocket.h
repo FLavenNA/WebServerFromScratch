@@ -12,7 +12,12 @@ namespace BSO
         public:
             // Constructor
             ListeningSocket(int domain, int service, int protocol, int port, u_long yourIpAddress, int backlog);
-            void starListening();
+            void startListening();
+            
+        public:
+            // Getter functions
+            int listening() const;
+            int backlog() const; 
 
         private: 
             int m_Backlog;
