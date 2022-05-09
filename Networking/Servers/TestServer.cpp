@@ -23,7 +23,7 @@ void BSO::TestServer::handler()
 
 void BSO::TestServer::responder()
 {
-    char* hello = "Hello from the server ! ";
+    char* hello = "<h1>Hello from</h1> <p> the server</p> ";
     send(m_NewSocket, hello, strlen(hello), 0);
     closesocket(m_NewSocket);
 }
